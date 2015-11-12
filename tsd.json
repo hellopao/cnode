@@ -1,0 +1,51 @@
+{
+  "version": "v4",
+  "repo": "borisyankov/DefinitelyTyped",
+  "ref": "master",
+  "path": "typings",
+  "bundle": "typings/tsd.d.ts",
+  "installed": {
+    "node/node.d.ts": {
+      "commit": "785c18f0c897c44ea7fa1a47f3bcb48110658520"
+    },
+    "lodash/lodash.d.ts": {
+      "commit": "8c4ec896ab619e7cb6572f82423e6e1eece70f5a"
+    },
+    "es6-shim/es6-shim.d.ts": {
+      "commit": "8c4ec896ab619e7cb6572f82423e6e1eece70f5a"
+    },
+    "mongoose/mongoose.d.ts": {
+      "commit": "8c4ec896ab619e7cb6572f82423e6e1eece70f5a"
+    },
+    "moment/moment.d.ts": {
+      "commit": "8c4ec896ab619e7cb6572f82423e6e1eece70f5a"
+    },
+    "moment/moment-node.d.ts": {
+      "commit": "8c4ec896ab619e7cb6572f82423e6e1eece70f5a"
+    },
+    "react/react.d.ts": {
+      "commit": "785c18f0c897c44ea7fa1a47f3bcb48110658520"
+    },
+    "redux/redux.d.ts": {
+      "commit": "8c4ec896ab619e7cb6572f82423e6e1eece70f5a"
+    },
+    "react-router/react-router.d.ts": {
+      "commit": "8c4ec896ab619e7cb6572f82423e6e1eece70f5a"
+    },
+    "react-dom/react-dom.d.ts": {
+      "commit": "785c18f0c897c44ea7fa1a47f3bcb48110658520"
+    },
+    "gulp/gulp.d.ts": {
+      "commit": "785c18f0c897c44ea7fa1a47f3bcb48110658520"
+    },
+    "q/Q.d.ts": {
+      "commit": "785c18f0c897c44ea7fa1a47f3bcb48110658520"
+    },
+    "orchestrator/orchestrator.d.ts": {
+      "commit": "785c18f0c897c44ea7fa1a47f3bcb48110658520"
+    },
+    "webpack/webpack.d.ts": {
+      "commit": "785c18f0c897c44ea7fa1a47f3bcb48110658520"
+    }
+  }
+}
