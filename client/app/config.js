@@ -18,3 +18,5 @@ export const TABS = [
 		id: "job"
 	}
 ];
+
+export const API_SERVER = "https://cnodejs.org/api/v1/";

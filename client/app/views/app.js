@@ -8,30 +8,27 @@ import {TABS} from "../config";
 import store from "../store";
 
 import Tab from "./tab";
+import {TopicList,TopicContent,TopicComments} from "./topic";
+import * as TopicAction from "../actions/topic";
 
 export default class App extends React.Component {
 	
-	constructor (props){
-		super(props);			
-		this.state = {
-			topicId: 0
-		};
-	}
-	
 	componentDidMount(){
-		let state = store.getState();
-		console.log(state)
-		store.dispatch({
-			type: "FETCH_TOPIC",
-			id: 1112222
-		});
-		console.log(store.getState())
 	}
 	
 	render() {
 		return (
 			<div>
 				<Tab />
+				<section className="main">
+					<aside className="side fl">
+						<TopicList topicList={[]} />
+					</aside>
+					<section className="content">
+						<TopicContent topic={{}} />
+						<TopicComments commentList={[]}/>
+					</section>
+				</section>
 			</div>
 		)
 	}

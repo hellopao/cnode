@@ -6,46 +6,46 @@
   "bundle": "typings/tsd.d.ts",
   "installed": {
     "node/node.d.ts": {
-      "commit": "785c18f0c897c44ea7fa1a47f3bcb48110658520"
+      "commit": "4f7b7e01d3a9622bfab0bef469e169529e60c66b"
     },
     "lodash/lodash.d.ts": {
-      "commit": "8c4ec896ab619e7cb6572f82423e6e1eece70f5a"
+      "commit": "4f7b7e01d3a9622bfab0bef469e169529e60c66b"
     },
     "es6-shim/es6-shim.d.ts": {
-      "commit": "8c4ec896ab619e7cb6572f82423e6e1eece70f5a"
+      "commit": "4f7b7e01d3a9622bfab0bef469e169529e60c66b"
     },
     "mongoose/mongoose.d.ts": {
-      "commit": "8c4ec896ab619e7cb6572f82423e6e1eece70f5a"
+      "commit": "4f7b7e01d3a9622bfab0bef469e169529e60c66b"
     },
     "moment/moment.d.ts": {
-      "commit": "8c4ec896ab619e7cb6572f82423e6e1eece70f5a"
+      "commit": "4f7b7e01d3a9622bfab0bef469e169529e60c66b"
     },
     "moment/moment-node.d.ts": {
-      "commit": "8c4ec896ab619e7cb6572f82423e6e1eece70f5a"
+      "commit": "4f7b7e01d3a9622bfab0bef469e169529e60c66b"
     },
     "react/react.d.ts": {
-      "commit": "785c18f0c897c44ea7fa1a47f3bcb48110658520"
+      "commit": "4f7b7e01d3a9622bfab0bef469e169529e60c66b"
     },
     "redux/redux.d.ts": {
-      "commit": "8c4ec896ab619e7cb6572f82423e6e1eece70f5a"
+      "commit": "4f7b7e01d3a9622bfab0bef469e169529e60c66b"
     },
     "react-router/react-router.d.ts": {
-      "commit": "8c4ec896ab619e7cb6572f82423e6e1eece70f5a"
-    },
-    "react-dom/react-dom.d.ts": {
-      "commit": "785c18f0c897c44ea7fa1a47f3bcb48110658520"
+      "commit": "4f7b7e01d3a9622bfab0bef469e169529e60c66b"
     },
     "gulp/gulp.d.ts": {
-      "commit": "785c18f0c897c44ea7fa1a47f3bcb48110658520"
+      "commit": "4f7b7e01d3a9622bfab0bef469e169529e60c66b"
     },
     "q/Q.d.ts": {
-      "commit": "785c18f0c897c44ea7fa1a47f3bcb48110658520"
+      "commit": "4f7b7e01d3a9622bfab0bef469e169529e60c66b"
     },
     "orchestrator/orchestrator.d.ts": {
-      "commit": "785c18f0c897c44ea7fa1a47f3bcb48110658520"
+      "commit": "4f7b7e01d3a9622bfab0bef469e169529e60c66b"
     },
     "webpack/webpack.d.ts": {
-      "commit": "785c18f0c897c44ea7fa1a47f3bcb48110658520"
+      "commit": "4f7b7e01d3a9622bfab0bef469e169529e60c66b"
+    },
+    "react/react-dom.d.ts": {
+      "commit": "4f7b7e01d3a9622bfab0bef469e169529e60c66b"
     }
   }
 }
