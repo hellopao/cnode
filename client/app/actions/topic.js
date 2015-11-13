@@ -4,37 +4,18 @@ import fetch from 'isomorphic-fetch';
 
 import {API_SERVER} from "../config";
 
-export const ADD_TOPIC = "ADD_TOPIC";
-
-export function createTopic(name) {
-	return {
-		type: "ADD_TOPIC"
-	}
-}
-
-export const FETCH_TOPIC = "FETCH_TOPIC";
+import * as actionType from "../constants/actionType";
 
 export function fetchTopic(id) {
 	return {
-		type: "FETCH_TOPIC",
+		type: actionType.FETCH_TOPIC,
 		id: id
 	}
 }
 
-export const TOPICS_FETCHED = "TOPICS_FETCHED";
-
-export function fetchedTopics (topics) {
+export function fetchTopics(query) {
 	return {
-		type: TOPICS_FETCHED,
-		topics: topics
+		type: actionType.FETCH_TOPICS,
+		query: query
 	}
-}
-
-export function fetchTopics(dispatch) {
-	return dispatch => {
-		return fetch(`${API_SERVER}/topics?page=1&limit=40`)
-			.then(response => {
-				dispatch(fetchedTopics(response));
-			})
-	};
 }

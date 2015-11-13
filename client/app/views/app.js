@@ -3,17 +3,17 @@
 import React from "react";
 import ReactDom from "react-dom";
 import {Router,Route,Link} from "react-router";
+import {bindActionCreators} from "redux";
 
 import {TABS} from "../config";
-import store from "../store";
 
 import Tab from "./tab";
 import {TopicList,TopicContent,TopicComments} from "./topic";
-import * as TopicAction from "../actions/topic";
 
 export default class App extends React.Component {
 	
 	componentDidMount(){
+		console.log(this.props);
 	}
 	
 	render() {

@@ -1,6 +1,6 @@
 "use strict";
 
-import {ADD_TOPIC, FETCH_TOPIC,FETCHED_TOPICS} from "../actions/topic";
+import * as actionType from "../constants/actionType";
 
 const initialState = {
 	topicList: []
@@ -8,19 +8,13 @@ const initialState = {
 
 export default function topics(state = initialState, action = {}) {
 	
-	const {type, result} = action;
-	
 	switch (action.type) {
-		case FETCH_TOPIC: {
-			return Object.assign({}, state, {
-				topicId: action.id
-			})
+		case actionType.FETCH_TOPIC: {
+			
 		}
 
-		case FETCHED_TOPICS : {
-			return Object.assign({},state,{
-				topicList: result.topics
-			});
+		case actionType.FETCH_TOPICS : {
+			
 		}
 		
 		default:
