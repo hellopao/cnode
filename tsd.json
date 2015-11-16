@@ -46,6 +46,12 @@
     },
     "react/react-dom.d.ts": {
       "commit": "4f7b7e01d3a9622bfab0bef469e169529e60c66b"
+    },
+    "axios/axios.d.ts": {
+      "commit": "aed176536a202b9a2475ce1989ea6d2d0226a185"
+    },
+    "es6-promise/es6-promise.d.ts": {
+      "commit": "aed176536a202b9a2475ce1989ea6d2d0226a185"
     }
   }
 }

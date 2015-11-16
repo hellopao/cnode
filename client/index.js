@@ -10,7 +10,7 @@ import createStore from "./app/store/index";
 
 import routes from "./app/routes";
 
-let store = createStore({});
+let store = createStore();
 		
 ReactDOM.render(
 	<Provider store={ store } >

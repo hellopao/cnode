@@ -20,3 +20,5 @@ export const TABS = [
 ];
 
 export const API_SERVER = "https://cnodejs.org/api/v1/";
+
+export const PAGE_SIZE = 40;

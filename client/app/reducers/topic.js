@@ -3,18 +3,23 @@
 import * as actionType from "../constants/actionType";
 
 const initialState = {
-	topicList: []
+	topics: [],
+	topic: {}
 };
 
 export default function topics(state = initialState, action = {}) {
 	
 	switch (action.type) {
-		case actionType.FETCH_TOPIC: {
-			
+		case actionType.FETCHED_TOPIC: {
+			return Object.assign({},state,{
+				topic: action.topic
+			});
 		}
 
-		case actionType.FETCH_TOPICS : {
-			
+		case actionType.FETCHED_TOPICS : {
+			return Object.assign({},state,{
+				topics: action.topics
+			});
 		}
 		
 		default:

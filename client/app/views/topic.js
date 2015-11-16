@@ -14,16 +14,18 @@ class Topic extends React.Component {
 	}
 	
 	render() {
+		this.topic = this.props.data || {};
+		
 		return (
 			<li className="topic">
 				<a href="" className="topic-avatar">
-					<img src={this.topic.avatar} />
+					<img src={this.topic.author.avatar_url} />
 				</a>
 				<h2 className="topic-title">
 					<a href="#" className="">{this.topic.title}</a>
 				</h2>
 				<span className="topic-meta fr">
-					<var>{this.topic.comment}</var>/<var>{this.topic.view}</var>
+					<var>{this.topic.reply_count}</var>/<var>{this.topic.visit_count}</var>
 				</span>
 			</li>
 		)
@@ -34,11 +36,11 @@ class Topic extends React.Component {
 export class TopicList extends React.Component {
 	
 	render () {
-		this.topic = this.props.data || {};	
+		this.topics = this.props.data || {};	
 		
 		return (
 			<ul className="topic-list">
-				{this.props.topicList.map(topic => (
+				{this.topics.map(topic => (
 					<Topic data={topic}/>
 				))}
 			</ul>
@@ -50,6 +52,7 @@ export class TopicList extends React.Component {
 export class TopicContent extends React.Component {
 	
 	componentDidMount (){	
+		
 	}
 	
 	render () {
@@ -59,13 +62,11 @@ export class TopicContent extends React.Component {
 			<section className="topic-content">
 				<h2 className="topic-title">{this.topic.title}</h2>
 				<div className="topic-meta">
-					<a href="" className="topic-author">{this.topic.author}</a>
-					<span className="topic-date">{this.topic.ctime}</span>
-					<span className="topic-category">{this.topic.tag}</span>
+					<a href="" className="topic-author">{this.topic.author && this.topic.author.loginname}</a>
+					<span className="topic-date">{this.topic.create_at}</span>
+					<span className="topic-category">{this.topic.tab}</span>
 				</div>
-				<div className="topic-body">
-					{this.topic.content}
-				</div>
+				<div className="topic-body" dangerouslySetInnerHTML={{__html: this.topic.content}}></div>
 			</section>
 		)
 	}
@@ -84,11 +85,10 @@ class Comment extends React.Component {
 		return (
 			<li className="comment">
 				<p className="comment-meta">
-					<a href="" className="comment-author">{this.comment.author}</a>
-					<span className="comment-date">{this.comment.ctime}</span>
+					<a href="" className="comment-author">{this.comment.author && this.comment.author.avatar_url}</a>
+					<span className="comment-date">{this.comment.create_at}</span>
 				</p>
-				<p className="comment-body">{this.comment.content}</p>
-				<p className="comment-device">{this.comment.device}</p>
+				<p className="comment-body" dangerouslySetInnerHTML={{__html: this.comment.content}}></p>
 			</li>
 		)
 	}
@@ -97,13 +97,16 @@ class Comment extends React.Component {
 export class TopicComments extends React.Component {
 	
 	render () {
+		
+		this.comments = this.props.data || [];
+		
 		return (
 			<section className="topic-comments">
 				<div className="comments-summary">
-					<p>共12</p>
+					<p>共{this.comments.length}</p>
 				</div>
 				<ul className="comments-list">
-					{this.props.commentList.map(comment => (
+					{this.comments.map(comment => (
 						<Comment data={comment} />
 					))}
 				</ul>
