@@ -7,10 +7,8 @@ import {bindActionCreators} from "redux";
 import {connect} from "react-redux";
 
 import {TABS} from "../config";
-
+import {fetchTopic,fetchTopics} from "../actions/topic";
 import Tab from "./tab";
-import {TopicList,TopicContent,TopicComments} from "./topic";
-import {fetchTopics} from "../actions/topic";
 
 class App extends React.Component {
 	
@@ -18,33 +16,16 @@ class App extends React.Component {
 		super(props);
 	}
 	
-	componentDidMount() {
+	componentDidMount () {
 		const {dispatch} = this.props;
-		dispatch(fetchTopics({page:1},true));
-	}
-	
-	componentWillReceiveProps(nextProps) {
-		
+		dispatch(fetchTopics({tab: TABS[0].id}));
 	}
 	
 	render() {
 		return (
 			<div>
 				<Tab />
-				<section className="main">
-					<aside className="side fl">
-						<TopicList data={this.props.topics} />
-					</aside>
-					{this.props.topic && this.props.topic.id &&
-					<section className="content">
-						<TopicContent data={this.props.topic} />
-						<TopicComments data={this.props.topic && this.props.topic.replies}/>
-					</section>
-					}
-					{(!this.props.topic || !this.props.topic.id) && 
-						<div className="loading">loading...</div>
-					}
-				</section>
+				{this.props.topics && this.props.children}
 			</div>
 		)
 	}
@@ -52,8 +33,7 @@ class App extends React.Component {
 
 function mapStateToProps(state) {
 	return {
-		topics: state.topic.topics,
-		topic: state.topic.topic
+		topics: state.topic.topics
 	}
 }
 

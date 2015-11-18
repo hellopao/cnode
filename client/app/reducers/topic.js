@@ -3,8 +3,10 @@
 import * as actionType from "../constants/actionType";
 
 const initialState = {
+	tabName: "all",
 	topics: [],
-	topic: {}
+	topic: {},
+	topicId: ""
 };
 
 export default function topics(state = initialState, action = {}) {

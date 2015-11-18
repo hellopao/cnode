@@ -1,8 +1,9 @@
 "use strict";
 
 const axios = require("axios");
+const qs = require('qs');
 
-import {API_SERVER,PAGE_SIZE} from "../config";
+import {API_SERVER, PAGE_SIZE} from "../config";
 
 import * as actionType from "../constants/actionType";
 
@@ -20,16 +21,15 @@ export function receiveTopics(topics) {
 	}
 }
 
-export function fetchTopics(query,show) {
+export function fetchTopics({limit = PAGE_SIZE, page = 1, tab = "all"}) {
 	return dispatch => {
-		return axios.get(`${API_SERVER}/topics/?limit=${query.limit || PAGE_SIZE}&page=${query.page}`)
+
+		let search = qs.stringify({ limit, page, tab })
+
+		return axios.get(`${API_SERVER}/topics/?${search}`)
 			.then(response => {
 				let res = response.data;
-				
-				if (show) {
-					let topic = res.data[0];
-					dispatch(fetchTopic(topic.id));					
-				}
+
 				dispatch(receiveTopics(res.data))
 			})
 	}

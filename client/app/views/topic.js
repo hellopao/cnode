@@ -3,11 +3,13 @@
 import React from "react";
 import ReactDom from "react-dom";
 import {Router,Route,Link} from "react-router";
+import {connect} from "react-redux";
 
 import {TABS} from "../config";
 import store from "../store";
+import {fetchTopic,fetchTopics} from "../actions/topic";
 
-class Topic extends React.Component {
+class TopicItem extends React.Component {
 
 	componentDidMount (){
 		
@@ -22,7 +24,7 @@ class Topic extends React.Component {
 					<img src={this.topic.author.avatar_url} />
 				</a>
 				<h2 className="topic-title">
-					<a href="#" className="">{this.topic.title}</a>
+					<Link to={`/topic/${this.topic.id}`} className="">{this.topic.title}</Link>
 				</h2>
 				<span className="topic-meta fr">
 					<var>{this.topic.reply_count}</var>/<var>{this.topic.visit_count}</var>
@@ -36,12 +38,12 @@ class Topic extends React.Component {
 export class TopicList extends React.Component {
 	
 	render () {
-		this.topics = this.props.data || {};	
+		this.topics = this.props.data || [];	
 		
 		return (
 			<ul className="topic-list">
 				{this.topics.map(topic => (
-					<Topic data={topic}/>
+					<TopicItem data={topic}/>
 				))}
 			</ul>
 		)
@@ -49,7 +51,7 @@ export class TopicList extends React.Component {
 	
 }
 
-export class TopicContent extends React.Component {
+class TopicContent extends React.Component {
 	
 	componentDidMount (){	
 		
@@ -62,7 +64,7 @@ export class TopicContent extends React.Component {
 			<section className="topic-content">
 				<h2 className="topic-title">{this.topic.title}</h2>
 				<div className="topic-meta">
-					<a href="" className="topic-author">{this.topic.author && this.topic.author.loginname}</a>
+					<Link to={`/user/${this.topic.author_id}`} className="topic-author">{this.topic.author && this.topic.author.loginname}</Link>
 					<span className="topic-date">{this.topic.create_at}</span>
 					<span className="topic-category">{this.topic.tab}</span>
 				</div>
@@ -73,7 +75,7 @@ export class TopicContent extends React.Component {
 	
 }
 
-class Comment extends React.Component {
+class TopicComment extends React.Component {
 
 	componentDidMount () {
 		
@@ -94,7 +96,7 @@ class Comment extends React.Component {
 	}
 }
 
-export class TopicComments extends React.Component {
+class TopicComments extends React.Component {
 	
 	render () {
 		
@@ -107,10 +109,74 @@ export class TopicComments extends React.Component {
 				</div>
 				<ul className="comments-list">
 					{this.comments.map(comment => (
-						<Comment data={comment} />
+						<TopicComment data={comment} />
 					))}
 				</ul>
 			</section>
 		)
 	}
 }
+
+class Topic extends React.Component {
+	
+	componentDidMount () {
+		const {dispatch} = this.props;
+		dispatch(fetchTopics({tab: this.props.params.tabName}));
+	}
+	
+	componentDidUpdate (prevProps) {
+		const {dispatch} = this.props;
+		
+		dispatch(fetchTopics({tab: this.props.params.tabName}));
+	}
+	
+	render() {
+		return (
+			<section className="main">
+				<aside className="side fl">
+					<TopicList data={this.props.topics} />
+				</aside>
+				{this.props.children}
+			</section>
+		)
+	}
+}
+
+
+export class TopicDetail extends React.Component {
+	
+	componentDidMount () {
+		const {dispatch} = this.props;
+		this.topicId = this.props.params.topicId;
+		
+		dispatch(fetchTopic(this.topicId));
+	}
+	
+	componentDidUpdate (prevProps) {
+		let oldId = prevProps.params.topicId;
+		let newId = this.props.params.topicId;
+		
+		if (oldId !== newId) {
+			const {dispatch} = this.props;
+			dispatch(fetchTopic(newId));
+		}
+	}
+	
+	render () {
+		
+		return (
+			<section className="content">
+				<TopicContent data={this.props.topic} />
+				<TopicComments data={this.props.topic && this.props.topic.replies}/>
+			</section>
+		)
+	}
+}
+
+function mapStateToProps(state) {
+	return {
+		topic: state.topic.topic
+	}
+}
+
+export default connect(mapStateToProps)(Topic);
