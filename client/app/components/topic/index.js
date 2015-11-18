@@ -12,7 +12,7 @@ import {fetchTopic,fetchTopics} from "../../actions/topic";
 import TopicList from "./list";
 import TopicDetail from "./detail";
 
-class Topic extends React.Component {
+export default class Topic extends React.Component {
 	
 	componentDidMount () {
 		const {dispatch} = this.props;
@@ -38,11 +38,3 @@ class Topic extends React.Component {
 		)
 	}
 }
-
-function mapStateToProps(state) {
-	return {
-		topics: state.topic.topics
-	}
-}
-
-export default connect(mapStateToProps)(Topic);

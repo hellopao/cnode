@@ -67,7 +67,7 @@ class TopicContent extends React.Component {
 	
 }
 
-class TopicDetail extends React.Component {
+export default class TopicDetail extends React.Component {
 	
 	componentDidUpdate (prevProps) {
 		let oldId = prevProps.params.topicId;
@@ -88,11 +88,3 @@ class TopicDetail extends React.Component {
 	}
 	
 }
-
-function mapStateToProps(state) {
-	return {
-		topic: state.topic.topic
-	}
-}
-
-export default connect(mapStateToProps)(TopicDetail);

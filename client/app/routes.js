@@ -4,12 +4,11 @@ import React from "react";
 import ReactDom from "react-dom";
 import {Router,Route,Link,IndexRoute} from "react-router";
 
-import App from "./views/app";
-import Tab from "./views/tab";
-import Topic from "./components/topic/index";
+import App from "./app";
+import Tab from "./components/tab";
+import Topic from "./components/topic";
 import TopicDetail from "./components/topic/detail";
 
-import User from "./views/user";
 
 export default (
 	<Router>
