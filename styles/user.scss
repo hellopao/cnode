@@ -1,0 +1,44 @@
+.user-avatar {
+    width: 100px;
+    height: 100px;
+    border: 1px solid transparent;
+    border-radius: 50%;
+    margin-right: 15px;
+}
+
+.user {
+    
+    .user-topics {
+        
+        .topic-item {
+            display: flex;
+            padding: 10px 5px;
+            border-top: 1px solid #eee;
+            align-items: center;
+            
+            .topic-item-body {
+                flex: 1;
+                color: #333;
+                overflow: hidden;
+                
+                .topic-meta {
+                    
+                    .author {
+                        margin-right: 15px;
+                    }
+
+                }
+                
+                .topic-title {
+                    font-size: 16px;
+                    white-space: nowrap;
+                    text-overflow: ellipsis;
+                    overflow: hidden;
+                    /*max-width: 70%;*/
+                }
+            }
+            
+        }
+    }
+    
+}

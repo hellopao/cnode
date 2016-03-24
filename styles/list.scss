@@ -1,0 +1,62 @@
+
+.nav {
+    display: flex;
+    
+    .nav-item {
+        height: 40px;
+        line-height: 40px;
+        flex: 1;
+        text-align: center;
+        color: #555;
+    }
+}
+
+.topics {
+    
+    .topic-list {
+        
+        .topic-item {
+            display: flex;
+            padding: 10px 5px;
+            border-top: 1px solid #eee;
+            align-items: center;
+            
+            .topic-item-body {
+                flex: 1;
+                color: #333;
+                overflow: hidden;
+                
+                .topic-meta {
+                    
+                    .topic-tag, .author {
+                        margin-right: 15px;
+                    }
+                    
+                    .topic-tag {
+                        display: inline-block;
+                        padding: 4px;
+                        border-radius: 5px;
+                        color: #fff;
+                        font-size: 12px;
+                    }
+                    
+                    .topic-rate {
+                        float:right;
+                    }
+                }
+                
+                .topic-title {
+                    font-size: 16px;
+                    white-space: nowrap;
+                    text-overflow: ellipsis;
+                    overflow: hidden;
+                    /*max-width: 70%;*/
+                }
+            }
+            
+        }
+    }
+    
+    
+
+}

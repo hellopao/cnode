@@ -1,0 +1,57 @@
+.content {
+    .topic-meta {
+        display: flex;
+        border-bottom: 1px solid #eee;
+        align-items: center;
+        padding-bottom: 10px;
+       
+        .topic-author, .topic-time, .topic-view {
+            font-size: 14px;
+            color: #555;
+            margin-right: 10px;
+        }
+        
+        .topic-tag {
+            display: inline-block;
+            padding: 4px;
+            border-radius: 5px;
+            color: #fff;
+            font-size: 12px;
+        }
+
+    }
+    .topic-content {
+        padding: 5px;
+        border-bottom: 1px solid #eee;    
+    }
+    
+    .topic-comment {
+        
+        .topic-comment-count {
+            color: #42b983;
+            font-weight: bold;
+            margin-right: 5px;
+        }
+        
+        .topic-comment-item {
+            border-top: 1px solid #eee;
+            padding: 5px;
+            
+            .topic-comment-meta {
+                display: flex;
+                align-items: center;
+                
+                .topic-comment-time, .topic-comment-author {
+                    margin-right: 10px;
+                    color: #555;
+                    font-size: 14px;
+                }
+            }
+            
+            .topic-comment-content {
+                word-break: break-all;
+            }
+        }
+        
+    }
+}

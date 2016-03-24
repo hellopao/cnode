@@ -1,39 +1,39 @@
 {
-  "name": "cnode_react",
+  "name": "cnode",
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
   "scripts": {
+    "build": "webpack",
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "node bin/server"
+    "start": "npm run build && node server\\app.js"
   },
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "axios": "^0.7.0",
-    "babel-core": "^6.1.2",
-    "babel-preset-es2015": "^6.1.2",
-    "koa": "^2.0.0-alpha.3",
-    "lodash": "^3.10.1",
-    "moment": "^2.10.6",
-    "mongoose": "^4.2.5",
-    "qs": "^6.0.0",
-    "react-dom": "^0.14.2",
-    "react-redux": "^4.0.0",
-    "react-router": "^1.0.0",
-    "redux": "^3.0.4",
-    "redux-thunk": "^1.0.0",
-    "superagent": "^1.4.0"
+    "axios": "^0.9.1",
+    "iscroll": "^5.1.3",
+    "koa": "^2.0.0",
+    "koa-convert": "^1.2.0",
+    "koa-router": "^7.0.1",
+    "koa-static": "^2.0.0",
+    "moment": "^2.12.0",
+    "qs": "^6.1.0",
+    "react": "^15.0.0-rc.1",
+    "react-dom": "^15.0.0-rc.1",
+    "react-iscroll": "^1.0.0",
+    "react-redux": "^4.4.1",
+    "react-router": "^2.0.1",
+    "redux": "^3.3.1",
+    "redux-thunk": "^2.0.1"
   },
   "devDependencies": {
-    "babel-loader": "^6.1.0",
-    "babel-preset-react": "^6.1.2",
-    "gulp": "^3.9.0",
-    "gulp-babel": "^6.1.0",
-    "gulp-plumber": "^1.0.1",
-    "gulp-sass": "^2.1.0",
-    "gulp-sequence": "^0.4.1",
-    "gulp-shell": "^0.5.1",
-    "webpack": "^1.12.3"
+    "css-loader": "^0.23.1",
+    "node-sass": "^3.4.2",
+    "sass-loader": "^3.2.0",
+    "style-loader": "^0.13.0",
+    "ts-loader": "^0.8.1",
+    "typescript": "^1.9.0-dev.20160322",
+    "webpack": "^1.12.14"
   }
 }

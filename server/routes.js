@@ -7,21 +7,19 @@ var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, ge
         step((generator = generator.apply(thisArg, _arguments)).next());
     });
 };
-const path_1 = require("path");
-const Koa = require("koa");
-const convert = require('koa-convert');
-const statics = require('koa-static');
-const routes_1 = require("./routes");
-const app = new Koa();
-app.use((ctx, next) => __awaiter(this, void 0, void 0, function* () {
-    try {
-        yield next();
-    }
-    catch (err) {
-        console.log(err);
-    }
+const axios = require("axios");
+const Router = require("koa-router");
+const config_1 = require("./config");
+const router = new Router({
+    prefix: config_1.API_PREFIX
+});
+router.get('*', (ctx, next) => __awaiter(this, void 0, void 0, function* () {
+    const api = ctx.url.replace(config_1.API_PREFIX, '');
+    const result = yield axios.get(`${config_1.API_SVR}/${api}`, {
+        headers: ctx.headers
+    });
+    ctx.body = result;
 }));
-app.use(convert(statics(path_1.resolve(__dirname, '../dist'))));
-app.use(routes_1.default.routes());
-app.listen(3000);
-//# sourceMappingURL=app.js.map
+Object.defineProperty(exports, "__esModule", { value: true });
+exports.default = router;
+//# sourceMappingURL=routes.js.map
