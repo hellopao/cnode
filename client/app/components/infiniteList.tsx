@@ -14,42 +14,50 @@ export default class InfiniteList extends React.Component<{ refresh: Function; l
     }
 
     componentDidMount() {
-        document.addEventListener('touchmove', function (e) { e.preventDefault(); }, false);
+        //document.addEventListener('touchmove', function (e) { e.preventDefault(); }, false);
     }
     
-    componentWillReceiveProps () {
-        this.setState({refreshing:false,loading: false});
-    }
-
-    onScrollEnd(iscroll) {
-        if (iscroll.y === 0) {
+    onScroll(iscroll) {
+        if (iscroll.y > 40 && !this.state.refreshing) {
             this.setState({ refreshing: true });
-            this.props.refresh();
             return;
         }
 
-        if (iscroll.y - iscroll.maxScrollY < 5) {
+        if (iscroll.maxScrollY - iscroll.y > 40 && !this.state.loading) {
             this.setState({ loading: true });
-            this.props.load();
             return;
         }
+    }
+    
+    onScrollEnd(iscroll) {
+        if (this.state.refreshing) {
+            this.props.refresh();
+            this.setState({refreshing:false});
+            return;
+        }
+        
+        if (this.state.loading) {
+            this.props.load();
+            this.setState({loading:false});
+        }
+        
     }
 
     render() {
 
         const iScrollOpts = {
-            mouseWheel: true,
-            scrollbars: true
+            probeType: 3
         };
 
         return (
             <ReactIScroll
                 ref="iscroll"
                 options={iScrollOpts}
-                iScroll={iScroll}
-                onScrollEnd={this.onScrollEnd.bind(this) }>
+                onScroll={this.onScroll.bind(this)}
+                onScrollEnd={this.onScrollEnd.bind(this)}
+                iScroll={iScroll}>
                 <div>
-                    <p className="load-tip" style={{ display: this.state.refreshing ? "" : "none" }}>下拉刷新...</p>
+                    <p className="load-tip" style={{ display: this.state.refreshing ? "" : "none" }}>刷新中...</p>
                     {this.props.children}
                     <p className="load-tip" style={{ display: this.state.loading ? "" : "none" }}>加载中...</p>
                 </div>

@@ -14,7 +14,9 @@ export default class TopicItem extends React.Component<{topic:ITopicItem},any> {
         
         return (
             <li className="topic-item">
-                <img src={topic.author.avatar_url} alt="" className="avatar" />
+                <Link to={`/user/${topic.author.loginname}`}>
+                    <img src={topic.author.avatar_url} alt="" className="avatar" />
+                </Link>
                 <Link className="topic-item-body" to={`/topic/${topic.id}`}>
                     <div className="topic-meta">
                         <span className={`topic-tag ${topic.tab}`}>{TABS[topic.tab]}</span>

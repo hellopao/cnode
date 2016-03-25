@@ -10,7 +10,7 @@ const router = new Router({
     prefix: API_PREFIX
 });
 
-router.get('*', async (ctx,next) => {
+router.get('*', async function(ctx,next) {
     const api = ctx.url.replace(API_PREFIX,'');
     
     const result = await axios.get(`${API_SVR}/${api}`,{

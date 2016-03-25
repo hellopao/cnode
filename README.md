@@ -2,13 +2,13 @@
 
 ## usage
 
-. clone this repo
+- clone this repo
 
 ```bash
 git clone https://github.com/hellopao/cnode
 ```
 
-. install dependencies
+- install dependencies
 
 ```bash
 npm install
@@ -16,7 +16,7 @@ npm install
 tsd install or typings install
 ```
 
-. run app
+- run app
 
 ```bash
 npm start 

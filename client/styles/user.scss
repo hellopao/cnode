@@ -8,6 +8,46 @@
 
 .user {
     
+    .user-info {
+        text-align: center;    
+        background: #eee;
+        padding: 10px 0;
+    
+        .meta {
+            display: flex;
+            
+            .account, .prop {
+                flex: 1;
+            }
+            
+            .github {
+                color:#444;
+            }
+            
+            .user-score {
+                color: #80bd01;
+            }
+        }    
+    }
+    
+    .panel-tab {
+        display: flex;
+        text-align: center;
+        height: 50px;
+        line-height: 50px;
+        
+        .tab-item {
+            flex: 1;
+            color: #444;
+            font-size: 16px;
+        }
+        
+        .selected {
+            color: #ff5a5f;
+            border-bottom: solid 2px #ff5a5f;
+        }
+    }
+    
     .user-topics {
         
         .topic-item {

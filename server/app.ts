@@ -10,7 +10,7 @@ import router from "./config/routes";
 
 const app = new Koa();
 
-app.use(async (ctx,next) => {
+app.use(async function (ctx,next) {
     try {
         await next();
     } catch (err) {

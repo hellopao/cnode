@@ -11,3 +11,8 @@ export const TABS = {
 export const PAGE_SIZE = 20;
 
 export const API_SVR = "https://cnodejs.org/api/v1/";
+
+export const USER_TOPIC_TYPES = {
+    recent_topics: "最近话题",
+    recent_replies: "最近回复"
+};

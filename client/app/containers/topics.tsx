@@ -3,7 +3,7 @@
 import * as React from "react";
 import {connect} from "react-redux";
 
-import Nav from "../components/nav";
+import Nav from "../components/topics/nav";
 import TopicList from "../components/topics/topicList";
 import {fetchTopics} from "../actions/topics";
 import {ITopicItem} from "../interfaces/topic";
