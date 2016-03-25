@@ -5,7 +5,6 @@ import {Link} from "react-router";
 import Moment from 'easy-datetime';
 
 import {ITopicComment} from "../../interfaces/comment";
-import {TABS} from "../../constants/constValues";
 
 export default class CommentItem extends React.Component<{comment:ITopicComment},any> {
     

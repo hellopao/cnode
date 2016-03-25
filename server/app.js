@@ -25,5 +25,5 @@ app.use(function (ctx, next) {
 });
 app.use(convert(statics(path_1.resolve(__dirname, '../dist'))));
 app.use(routes_1.default.routes());
-app.listen(3000);
+app.listen(process.env.PORT || 3000);
 //# sourceMappingURL=app.js.map

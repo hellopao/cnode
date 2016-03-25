@@ -12,10 +12,6 @@ export default class InfiniteList extends React.Component<{ refresh: Function; l
             refreshing: false
         }
     }
-
-    componentDidMount() {
-        //document.addEventListener('touchmove', function (e) { e.preventDefault(); }, false);
-    }
     
     onScroll(iscroll) {
         if (iscroll.y > 40 && !this.state.refreshing) {
@@ -46,7 +42,8 @@ export default class InfiniteList extends React.Component<{ refresh: Function; l
     render() {
 
         const iScrollOpts = {
-            probeType: 3
+            probeType: 3,
+            click: true
         };
 
         return (
