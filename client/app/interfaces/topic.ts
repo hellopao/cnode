@@ -1,6 +1,6 @@
 "use strict";
 
-import {ITopicComment} from "./topicComment";
+import {ITopicComment} from "./comment";
 
 export interface ITopicItem {
     /**

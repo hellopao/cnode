@@ -2,15 +2,10 @@
 
 import * as React from "react";
 import {Link} from "react-router";
-import "moment/locale/zh-cn";
-import * as moment from "moment";
+import Moment from 'easy-datetime';
 
-moment.locale('zh-cn');
-
-import {ITopicComment} from "../interfaces/topicComment";
-import {TABS} from "../constants/constValues";
-
-moment.locale('zh-cn');
+import {ITopicComment} from "../../interfaces/comment";
+import {TABS} from "../../constants/constValues";
 
 export default class CommentItem extends React.Component<{comment:ITopicComment},any> {
     
@@ -24,7 +19,7 @@ export default class CommentItem extends React.Component<{comment:ITopicComment}
                         <img className="avatar" src={comment.author && comment.author.avatar_url} />
                     </Link>
                     <span className="topic-comment-author">{comment.author && comment.author.loginname}</span>
-                    <span className="topic-comment-time">{moment(comment.create_at).fromNow()}</span>
+                    <span className="topic-comment-time">{new Moment(comment.create_at).fromNow()}</span>
                 </div>
                 <div className="topic-comment-content" dangerouslySetInnerHTML={{__html: comment.content}}>
                 </div>

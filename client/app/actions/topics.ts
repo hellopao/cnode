@@ -5,7 +5,7 @@ import * as request from "../lib/request";
 import * as actionTypes from "../constants/actionTypes";
 import * as constValues from "../constants/constValues";
 
-import {ITopicItem} from "../interfaces/topicItem";
+import {ITopicItem} from "../interfaces/topic";
 
 export function requestTopics(topics: ITopicItem[]) {
     return {

@@ -1,7 +1,7 @@
 "use strict";
 
 import * as actionTypes from "../constants/actionTypes";
-import {ITopicItem} from "../interfaces/topicItem";
+import {ITopicItem} from "../interfaces/topic";
 
 export function topics(state: ITopicItem[], action) {
     switch (action.type) {

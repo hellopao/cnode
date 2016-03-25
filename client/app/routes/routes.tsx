@@ -6,7 +6,7 @@ import { Router, Route, IndexRedirect, hashHistory } from 'react-router';
 
 import Root from "../containers/root";
 import Topics from "../containers/topics";
-import TopicList from "../components/topicList";
+import TopicList from "../components/topics/topicList";
 import Topic from "../containers/topic";
 import User from "../containers/user";
 

@@ -3,17 +3,14 @@
 import * as React from "react";
 import {Link} from "react-router";
 import {connect} from "react-redux";
-import "moment/locale/zh-cn";
-import * as moment from "moment";
+const Moment = require('easy-datetime');
 
-import UserTopic from "../components/userTopic";
+import UserTopic from "../components/user/userTopic";
 import {fetchUserInfo} from "../actions/user";
 import {TABS} from "../constants/constValues";
-import {IUserInfo} from "../interfaces/userInfo";
+import {IUserInfo} from "../interfaces/user";
 
 import "../../styles/user.scss";
-
-moment.locale('zh-cn');
 
 class User extends React.Component<{user: IUserInfo, dispatch: Function,routeParams:{userId:string}},any> {
     
@@ -32,7 +29,7 @@ class User extends React.Component<{user: IUserInfo, dispatch: Function,routePar
                     <p className="user-github">
                         github: <a href={`https://github.com/${user.githubUsername}`}>@{user.githubUsername}</a>
                     </p>
-                    <p className="user-regtime">账号创建于 {moment(user.create_at).fromNow()}</p>
+                    <p className="user-regtime">账号创建于 {new Moment(user.create_at).fromNow()}</p>
                     <p className="user-score">积分{user.score}</p>
                 </div>
                 <ul className="user-topics">

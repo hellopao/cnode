@@ -1,8 +1,8 @@
 "use strict";
 
 import * as React from "react";
-import ReactIScroll from 'react-iscroll';
-import iScroll = require("iscroll/build/iscroll-probe");
+const ReactIScroll = require('react-iscroll').default;
+const iScroll = require("iscroll/build/iscroll-probe");
 
 export default class InfiniteList extends React.Component<{ refresh: Function; load: Function }, { refreshing?: boolean; loading?: boolean; }> {
 

@@ -4,14 +4,13 @@ import * as React from "react";
 import {connect} from "react-redux";
 
 import Nav from "../components/nav";
-import TopicList from "../components/topicList";
+import TopicList from "../components/topics/topicList";
 import {fetchTopics} from "../actions/topics";
-
-import {ITopicItem} from "../interfaces/topicItem";
+import {ITopicItem} from "../interfaces/topic";
 
 import "../../styles/list.scss";
 
-class Topics extends React.Component<{ topics: ITopicItem[], dispatch: Function, params: { tab: string } }, { page: number }> {
+class Topics extends React.Component<{ topics: ITopicItem[], dispatch: Function, params: { tab: string } ,children:any}, { page: number }> {
 
     constructor(props) {
         super(props);

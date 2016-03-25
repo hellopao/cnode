@@ -7,7 +7,6 @@
     "iscroll": "registry:dt/iscroll#4.2.0+20160316155526",
     "koa": "registry:dt/koa#2.0.0+20160317120654",
     "koa-router": "registry:dt/koa-router#7.0.0+20160314083221",
-    "moment": "registry:dt/moment#2.8.0+20160316155526",
     "node": "registry:dt/node#4.0.0+20160319033040",
     "qs": "registry:dt/qs#0.0.0+20160317120654",
     "react": "registry:dt/react#0.14.0+20160319053454",

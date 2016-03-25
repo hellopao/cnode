@@ -3,14 +3,11 @@
 import * as React from "react";
 import {connect} from "react-redux";
 
-import InfinitList from "./infiniteList";
+import InfinitList from "../infiniteList";
 
 import Topic from "./topicItem";
-import {fetchTopics} from "../actions/topics";
-
-import {ITopicItem} from "../interfaces/topicItem";
-
-import "../../styles/list.scss";
+import {fetchTopics} from "../../actions/topics";
+import {ITopicItem} from "../../interfaces/topic";
 
 export default class TopicList extends React.Component<{ topics: ITopicItem[]; dispatch: Function; routeParams: { tab: string }; load: Function; refresh: Function }, any> {
 

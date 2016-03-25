@@ -3,19 +3,16 @@
 import * as React from "react";
 import {Link} from "react-router";
 import {connect} from "react-redux";
-import "moment/locale/zh-cn";
-import * as moment from "moment";
+import Moment from 'easy-datetime';
 
-import CommentItem from "../components/commentItem";
+import CommentItem from "../components/topic/commentItem";
 import {fetchTopic} from "../actions/topics";
 import {TABS} from "../constants/constValues";
-import {ITopicItem} from "../interfaces/topicItem";
-import {ITopicComment} from "../interfaces/topicComment";
+import {ITopicItem} from "../interfaces/topic";
+import {ITopicComment} from "../interfaces/comment";
 
 import "../../styles/content.scss";
 import "../../styles/markdown.css";
-
-moment.locale('zh-cn');
 
 class Topic extends React.Component<{ topic: ITopicItem, dispatch: Function, routeParams: { topicId: string } }, any> {
 
@@ -36,7 +33,7 @@ class Topic extends React.Component<{ topic: ITopicItem, dispatch: Function, rou
                         </Link>
                         <div>
                             <Link to={`/user/${topic.author && topic.author.loginname}`} className="topic-author">{topic.author && topic.author.loginname}</Link>
-                            <span className="topic-time">发布于{moment(topic.create_at).fromNow() }</span>
+                            <span className="topic-time">发布于{new Moment(topic.create_at).fromNow() }</span>
                             <span className="topic-view">{topic.visit_count}次浏览</span>
                         </div>
                         <span className={`topic-tag ${topic.tab}`}>{TABS[topic.tab]}</span>

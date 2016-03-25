@@ -2,10 +2,10 @@
 
 import * as React from "react";
 import {Link} from "react-router";
-const Moment = require('easy-datetime');
+import Moment from 'easy-datetime';
 
-import {ITopicItem} from "../interfaces/topicItem";
-import {TABS} from "../constants/constValues";
+import {ITopicItem} from "../../interfaces/topic";
+import {TABS} from "../../constants/constValues";
 
 export default class TopicItem extends React.Component<{topic:ITopicItem},any> {
     

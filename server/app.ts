@@ -3,10 +3,10 @@
 import {resolve} from "path";
 
 import * as Koa from "koa";
-import convert = require('koa-convert');
-import statics = require('koa-static');
+const convert = require('koa-convert');
+const statics = require('koa-static');
 
-import router from "./routes";
+import router from "./config/routes";
 
 const app = new Koa();
 

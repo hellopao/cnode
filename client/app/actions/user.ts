@@ -5,7 +5,7 @@ import * as request from "../lib/request";
 import * as actionTypes from "../constants/actionTypes";
 import * as constValues from "../constants/constValues";
 
-import {IUserInfo} from "../interfaces/userInfo";
+import {IUserInfo} from "../interfaces/user";
  
 export function requestUserInfo(user: IUserInfo) {
     return {
