@@ -4,7 +4,8 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "build": "webpack && cp client\\index.html dist\\index.html",
+    "prebuild": "set NODE_ENV=prod",
+    "build": "node node_modules\\webpack\\bin\\webpack --config webpack.config.js && cp client\\index.html dist\\index.html",
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "npm run build && node server\\app.js"
   },
@@ -37,6 +38,7 @@
     "style-loader": "^0.13.0",
     "ts-loader": "^0.8.1",
     "typescript": "^1.9.0-dev.20160322",
+    "url-loader": "^0.5.7",
     "webpack": "^2.1.0-beta.4"
   }
 }

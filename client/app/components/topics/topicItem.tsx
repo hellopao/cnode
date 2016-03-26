@@ -12,6 +12,8 @@ export default class TopicItem extends React.Component<{topic:ITopicItem},any> {
     render () {
         const {topic} = this.props;
         
+        const tab = TABS.find(tab => tab.name === (topic.top ? "top" : (topic.good ? "good" : topic.tab)));
+        
         return (
             <li className="topic-item">
                 <Link to={`/user/${topic.author.loginname}`}>
@@ -19,7 +21,9 @@ export default class TopicItem extends React.Component<{topic:ITopicItem},any> {
                 </Link>
                 <Link className="topic-item-body" to={`/topic/${topic.id}`}>
                     <div className="topic-meta">
-                        <span className={`topic-tag ${topic.tab}`}>{TABS[topic.tab]}</span>
+                        <span className={`topic-tag ${tab && tab.name}`}>
+                            {tab && tab.text}
+                        </span>
                         <span className="author">{topic.author.loginname}</span>
                         <span className="topic-time">{new Moment(topic.create_at).fromNow()}</span>
                         <span className="topic-rate">{topic.reply_count}/{topic.visit_count}</span>

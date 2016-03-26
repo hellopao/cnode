@@ -23,6 +23,8 @@ class Topic extends React.Component<{ topic: ITopicItem, dispatch: Function, rou
     render() {
         const {topic} = this.props;
 
+        const tab = TABS.find(tab => tab.name === (topic.top ? "top" : (topic.good ? "good" : topic.tab)));
+        
         return (
             <section className="content">
                 <div>
@@ -36,7 +38,7 @@ class Topic extends React.Component<{ topic: ITopicItem, dispatch: Function, rou
                             <span className="topic-time">发布于{new Moment(topic.create_at).fromNow() }</span>
                             <span className="topic-view">{topic.visit_count}次浏览</span>
                         </div>
-                        <span className={`topic-tag ${topic.tab}`}>{TABS[topic.tab]}</span>
+                        <span className={`topic-tag ${tab && tab.name}`}>{tab && tab.text}</span>
                     </div>
                 </div>
                 <div className="topic-content markdown-body" dangerouslySetInnerHTML={{ __html: topic.content }}>

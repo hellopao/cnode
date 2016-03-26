@@ -47,7 +47,7 @@ export interface ITopicItem {
     /**
      * topic评论
      */
-    replies: Array<ITopicComment>;
+    replies?: Array<ITopicComment>;
     /**
      * topic评论数量
      */

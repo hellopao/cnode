@@ -1,4 +1,4 @@
-ul {
+ul,li,p, {
     padding: 0;
     margin: 0;
 }
@@ -9,10 +9,6 @@ a {
 
 li {
     list-style: none;
-}
-
-.all {
-    background: #d90073;    
 }
 
 .share {
@@ -30,6 +26,10 @@ li {
 .ask {
     background: #a20025;
 }
+
+.top {
+    background: #d90073;
+}
                  
 .avatar {
     width: 40px;
@@ -43,4 +43,27 @@ li {
     color: #555;
     text-align: center;
     font-size: 14px;
+    padding: 15px 0;
+    border-top: 1px solid #eee;
+}
+
+.loading {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    z-index: 1024;
+    background: rgba(0,0,0,.7);
+    border-radius: 5px;
+    padding: 10px 15px;
+    text-align: center;
+    font-size: 14px;
+    
+    .loading-icon {
+        width: 48px;
+        height: 48px;
+        display: inline-block;
+        background: url(../images/loading.gif);    
+        margin-bottom: 10px;
+    }
 }

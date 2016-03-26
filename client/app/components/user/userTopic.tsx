@@ -5,7 +5,6 @@ import {Link} from "react-router";
 import Moment from 'easy-datetime';
 
 import {ITopic} from "../../interfaces/user";
-import {TABS} from "../../constants/constValues";
 
 export default class UserTopic extends React.Component<{topic:ITopic},any> {
     

@@ -43,6 +43,7 @@ export default class InfiniteList extends React.Component<{ refresh: Function; l
 
         const iScrollOpts = {
             probeType: 3,
+            mouseWheel: true,
             click: true
         };
 

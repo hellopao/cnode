@@ -8,7 +8,7 @@ import Moment from 'easy-datetime';
 import UserTopic from "../components/user/userTopic";
 import TabPanel from "../components/user/tabPanel";
 import {fetchUserInfo} from "../actions/user";
-import {TABS, USER_TOPIC_TYPES} from "../constants/constValues";
+import {USER_TOPIC_TYPES} from "../constants/constValues";
 import {IUserInfo, ITopic} from "../interfaces/user";
 
 import "../../styles/user.scss";
