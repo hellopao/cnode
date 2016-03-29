@@ -10,7 +10,7 @@ const plugins = [
     })
 ];
 
-if (process.env.NODE_ENV === "prod") {
+if (true || process.env.NODE_ENV === "prod") {
     plugins.push(
         new webpack.optimize.UglifyJsPlugin({
             sourceMap: false,
@@ -28,14 +28,14 @@ module.exports = {
         filename: "./dist/scripts/bundle.js",
     },
     resolve: {
-        extensions: ["", ".webpack.js", ".web.js", ".ts", ".tsx", ".js"]
+        extensions: [".ts", ".tsx", ".js"]
     },
     module: {
         loaders: [
             { test: /\.tsx?$/, loader: "babel?presets[]=es2015!ts" },
             { test: /\.scss$/, loader: "style!css!sass" },
             { test: /\.css$/, loader: "style!css" },
-            { test: /.(png|jpg|gif)$/, loader: 'url-loader?limit=8192' }
+            { test: /.(gif|jpg|png|woff|svg|eot|ttf)\??.*$/, loader: 'url-loader?limit=8192&name=[path][name].[ext]' }
         ]
     },
     plugins: plugins,

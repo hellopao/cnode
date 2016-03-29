@@ -32,7 +32,7 @@ export default class TabPanel extends React.Component<{tabs:Array<{name:string,c
                 <div className="panel-content">
                     {this.props.tabs.map((tab,index) => {
                         return (
-                            <div style={{display: this.state.current === index ? '': 'none'}}>
+                            <div style={{display: this.state.current === index ? '': 'none'}} key={index}>
                                 {tab.content}
                             </div>
                         )

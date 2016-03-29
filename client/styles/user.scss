@@ -7,6 +7,7 @@
 }
 
 .user {
+    padding-top: 40px;
     
     .user-info {
         text-align: center;    
@@ -15,6 +16,10 @@
     
         .meta {
             display: flex;
+            
+            p {
+                margin-top: 10px;
+            }
             
             .account, .prop {
                 flex: 1;
@@ -61,6 +66,10 @@
                 color: #333;
                 overflow: hidden;
                 
+                .topic-meta, .topic-title {
+                    margin: 5px 0;
+                }
+                
                 .topic-meta {
                     
                     .author {
@@ -74,7 +83,6 @@
                     white-space: nowrap;
                     text-overflow: ellipsis;
                     overflow: hidden;
-                    /*max-width: 70%;*/
                 }
             }
             

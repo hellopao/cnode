@@ -5,11 +5,11 @@ import {Link} from "react-router";
 
 import {TABS} from "../../constants/constValues";
 
-export default class Nav extends React.Component<any,{current: number}> {
+export default class Nav extends React.Component<{current:string},{current: number}> {
     
     constructor (props) {
         super(props);
-        this.state = {current: 0};
+        this.state = {current: TABS.filter(tab => tab.isSys).findIndex(tab => tab.name === this.props.current)};
     }
     
     handleClick (index) {

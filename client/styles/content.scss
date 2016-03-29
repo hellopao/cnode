@@ -1,4 +1,8 @@
+
 .content {
+    margin: 10px;    
+    padding-top: 40px;
+    
     .topic-meta {
         display: flex;
         border-bottom: 1px solid #eee;
@@ -21,8 +25,7 @@
 
     }
     .topic-content {
-        padding: 5px;
-        border-bottom: 1px solid #eee;    
+        padding: 5px; 
     }
     
     .topic-comment {
@@ -37,11 +40,19 @@
             border-top: 1px solid #eee;
             padding: 5px;
             
-            .topic-comment-meta {
+            .topic-comment-head {
                 display: flex;
                 align-items: center;
+            }
+            
+            .topic-comment-avatar {
+                flex: 1;
+            }
+            
+            .topic-comment-meta {
+                flex: 9;
                 
-                .topic-comment-time, .topic-comment-author {
+                .topic-comment-time, .topic-comment-author, .topic-comment-up {
                     margin-right: 10px;
                     color: #555;
                     font-size: 14px;

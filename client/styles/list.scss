@@ -1,6 +1,7 @@
 
 .nav {
     display: flex;
+    margin: 10px;
     
     .nav-item {
         height: 40px;
@@ -30,6 +31,7 @@
                 flex: 1;
                 color: #333;
                 overflow: hidden;
+                padding: 3px 0;
                 
                 .topic-meta {
                     
@@ -54,8 +56,8 @@
                     font-size: 16px;
                     white-space: nowrap;
                     text-overflow: ellipsis;
-                    overflow: hidden;
-                    /*max-width: 70%;*/
+                    overflow: hidden;    
+                    padding: 10px 0;
                 }
             }
             

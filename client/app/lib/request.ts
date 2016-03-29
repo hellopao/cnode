@@ -1,7 +1,7 @@
 "use strict";
 
 import * as axios from "axios";
-import * as qs from "qs";
+import * as qs from "querystring";
 
 import * as loading from "./loading";
 import {API_SVR} from "../constants/constValues";

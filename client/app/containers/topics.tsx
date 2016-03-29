@@ -51,7 +51,7 @@ class Topics extends React.Component<{ topics: ITopicItem[], dispatch: Function,
 
         return (
             <div>
-                <Nav></Nav>
+                <Nav current={this.props.params.tab}></Nav>
                 {
                     this.props.children && React.cloneElement(this.props.children, {
                         topics,

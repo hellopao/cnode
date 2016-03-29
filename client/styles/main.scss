@@ -1,14 +1,46 @@
-ul,li,p, {
-    padding: 0;
-    margin: 0;
+
+/* 清除浮动 */
+.ks-clear, .clear {
+    *zoom: 1;
+    
+    &:after {
+        content: '\20';
+        display: block;
+        height: 0;
+        clear: both;
+    }
 }
 
-a {
-    text-decoration: none;
+.fr {
+    float: right;
 }
 
-li {
-    list-style: none;
+.fl {
+    float: left;
+}
+
+.mt_5 {
+    margin-top: 5px;
+}
+
+.mb_5 {
+    margin-bottom: 5px;
+}
+
+.mr_5 {
+    margin-right: 5px;
+}
+
+.mt_10 {
+    margin-top: 10px;
+}
+
+.mb_10 {
+    margin-bottom: 10px;
+}
+
+.m_10 {
+    margin: 10px;
 }
 
 .share {
@@ -58,6 +90,7 @@ li {
     padding: 10px 15px;
     text-align: center;
     font-size: 14px;
+    color: #fff;
     
     .loading-icon {
         width: 48px;
@@ -65,5 +98,28 @@ li {
         display: inline-block;
         background: url(../images/loading.gif);    
         margin-bottom: 10px;
+    }
+}
+
+.menu {
+    display: flex;    
+    height: 40px;
+    line-height: 40px;
+    text-align: center;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    border-bottom: 1px solid #eee;    
+    background: #fff;
+    
+    a.back {
+        flex: 1;
+    }
+    
+    span.title {
+        flex: 9;
+        font-size: 16px;
     }
 }

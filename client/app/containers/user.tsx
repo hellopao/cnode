@@ -5,6 +5,7 @@ import {Link} from "react-router";
 import {connect} from "react-redux";
 import Moment from 'easy-datetime';
 
+import Menu from "../components/menu";
 import UserTopic from "../components/user/userTopic";
 import TabPanel from "../components/user/tabPanel";
 import {fetchUserInfo} from "../actions/user";
@@ -38,24 +39,27 @@ class User extends React.Component<{ user: IUserInfo, dispatch: Function, routeP
         });
         
         return (
-            <section className="user">
-                <div className="user-info">
-                    <img src={user.avatar_url} alt="" className="user-avatar"/>
-                    <div className="meta">
-                        <div className="account">
-                            <p className="user-loginname">用户名: {user.loginname}</p>
-                            <p className="user-github">
-                                github: <a className="github" href={`https://github.com/${user.githubUsername}`}> @{user.githubUsername}</a>
-                            </p>
-                        </div>
-                        <div className="prop">
-                            <p className="user-regtime">创建时间: {new Moment(user.create_at).fromNow() }</p>
-                            <p className="user-score">积分:{user.score}</p>
+            <div>
+                <Menu title="用户" />
+                <section className="user">
+                    <div className="user-info">
+                        <img src={user.avatar_url} alt="" className="user-avatar"/>
+                        <div className="meta">
+                            <div className="account">
+                                <p className="user-loginname">用户名: {user.loginname}</p>
+                                <p className="user-github">
+                                    github: <a className="github" href={`https://github.com/${user.githubUsername}`}> @{user.githubUsername}</a>
+                                </p>
+                            </div>
+                            <div className="prop">
+                                <p className="user-regtime">创建时间: {new Moment(user.create_at).fromNow() }</p>
+                                <p className="user-score">积分:{user.score}</p>
+                            </div>
                         </div>
                     </div>
-                </div>
-                <TabPanel tabs={tabs} />
-            </section>
+                    <TabPanel tabs={tabs} />
+                </section>
+            </div>
         )
     }
 }
