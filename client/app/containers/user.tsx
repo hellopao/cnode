@@ -14,10 +14,16 @@ import {IUserInfo, ITopic} from "../interfaces/user";
 
 import "../../styles/user.scss";
 
-class User extends React.Component<{ user: IUserInfo, dispatch: Function, routeParams: { userId: string } }, any> {
+class User extends React.Component<{ user: IUserInfo, dispatch: Function, params: { userId: string } }, any> {
 
     componentDidMount() {
-        this.props.dispatch(fetchUserInfo(this.props.routeParams.userId));
+        this.props.dispatch(fetchUserInfo(this.props.params.userId));
+    }
+
+    componentWillReceiveProps(nextProps: { params: { userId: string } }) {
+        if (this.props.params.userId !== nextProps.params.userId) {
+            this.props.dispatch(fetchUserInfo(nextProps.params.userId));
+        }
     }
 
     render() {
@@ -30,14 +36,14 @@ class User extends React.Component<{ user: IUserInfo, dispatch: Function, routeP
                     <ul className="user-topics">
                         {user[topicType] && user[topicType].map((topic: ITopic, index) => {
                             return (
-                                <UserTopic topic={topic} key={index} />
+                                <UserTopic topic={topic} key={index}/>
                             )
                         }) }
                     </ul>
                 )
             }
         });
-        
+
         return (
             <div>
                 <Menu title="用户" />
@@ -53,7 +59,7 @@ class User extends React.Component<{ user: IUserInfo, dispatch: Function, routeP
                             </div>
                             <div className="prop">
                                 <p className="user-regtime">创建时间: {new Moment(user.create_at).fromNow() }</p>
-                                <p className="user-score">积分:{user.score}</p>
+                                <p className="user-score">积分: {user.score}</p>
                             </div>
                         </div>
                     </div>

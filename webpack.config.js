@@ -10,7 +10,7 @@ const plugins = [
     })
 ];
 
-if (true || process.env.NODE_ENV === "prod") {
+if (process.env.NODE_ENV === "prod") {
     plugins.push(
         new webpack.optimize.UglifyJsPlugin({
             sourceMap: false,

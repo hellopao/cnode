@@ -1,6 +1,7 @@
 "use strict";
 
 import * as React from "react";
+const debounce = require('debounce');
 const ReactIScroll = require('react-iscroll').default;
 const iScroll = require("iscroll/build/iscroll-probe");
 
@@ -52,7 +53,7 @@ export default class InfiniteList extends React.Component<{ refresh: Function; l
                 ref="iscroll"
                 options={iScrollOpts}
                 onScroll={this.onScroll.bind(this)}
-                onScrollEnd={this.onScrollEnd.bind(this)}
+                onScrollEnd={debounce(this.onScrollEnd.bind(this))}
                 iScroll={iScroll}>
                 <div>
                     <p className="load-tip" style={{ display: this.state.refreshing ? "" : "none" }}>刷新中...</p>
