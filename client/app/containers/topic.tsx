@@ -3,7 +3,7 @@
 import * as React from "react";
 import {Link} from "react-router";
 import {connect} from "react-redux";
-import Moment from 'easy-datetime';
+import Moment from 'mini-moment';
 
 import CommentItem from "../components/topic/commentItem";
 import Menu from "../components/menu";

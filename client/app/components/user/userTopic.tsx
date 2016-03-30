@@ -2,7 +2,7 @@
 
 import * as React from "react";
 import {Link} from "react-router";
-import Moment from 'easy-datetime';
+import Moment from 'mini-moment';
 
 import {ITopic} from "../../interfaces/user";
 
