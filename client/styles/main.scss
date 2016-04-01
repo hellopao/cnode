@@ -31,6 +31,10 @@
     margin-right: 5px;
 }
 
+.mr_15 {
+    margin-right: 15px;
+}
+
 .mt_10 {
     margin-top: 10px;
 }
@@ -68,7 +72,6 @@
     height: 40px;
     border: 1px solid transparent;
     border-radius: 50%;
-    margin-right: 15px;
 }               
 
 .load-tip {
@@ -87,7 +90,7 @@
     z-index: 1024;
     background: rgba(0,0,0,.7);
     border-radius: 5px;
-    padding: 10px 15px;
+    padding: 10px 25px;
     text-align: center;
     font-size: 14px;
     color: #fff;
@@ -103,8 +106,8 @@
 
 .menu {
     display: flex;    
-    height: 40px;
-    line-height: 40px;
+    height: 50px;
+    line-height: 50px;
     text-align: center;
     position: fixed;
     top: 0;
@@ -125,6 +128,7 @@
     span.title {
         flex: 9;
         font-size: 16px;
+        margin-right: 10%;
     }
 }
 

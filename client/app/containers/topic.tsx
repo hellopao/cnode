@@ -37,8 +37,8 @@ class Topic extends React.Component<{ topic: ITopicItem, dispatch: Function, rou
                 <section className="content">
                     <div>
                         <h2 className="topic-title">{topic.title}</h2>
-                        <div className="topic-meta">
-                            <Link to={`/user/${topic.author && topic.author.loginname}`}>
+                        <div className="topic-meta mt_10">
+                            <Link to={`/user/${topic.author && topic.author.loginname}`} className="mr_15">
                                 <img className="avatar" src={topic.author && topic.author.avatar_url} />
                             </Link>
                             <div>

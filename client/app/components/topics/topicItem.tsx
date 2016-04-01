@@ -16,7 +16,7 @@ export default class TopicItem extends React.Component<{topic:ITopicItem},any> {
         
         return (
             <li className="topic-item">
-                <Link to={`/user/${topic.author.loginname}`}>
+                <Link to={`/user/${topic.author.loginname}`} className="mr_15">
                     <img src={topic.author.avatar_url} alt="" className="avatar" />
                 </Link>
                 <Link className="topic-item-body" to={`/topic/${topic.id}`}>
@@ -26,7 +26,9 @@ export default class TopicItem extends React.Component<{topic:ITopicItem},any> {
                         </span>
                         <span className="author">{topic.author.loginname}</span>
                         <span className="topic-time">{new Moment(topic.create_at).fromNow()}</span>
-                        <span className="topic-rate">{topic.reply_count}/{topic.visit_count}</span>
+                        <span className="topic-rate">
+                            <var className="replies">{topic.reply_count}</var>/<var className="views">{topic.visit_count}</var>
+                        </span>
                     </div>
                     <h2 className="topic-title">{topic.title}</h2>
                 </Link>

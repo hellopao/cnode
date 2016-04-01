@@ -14,7 +14,7 @@ export default class CommentItem extends React.Component<{comment:ITopicComment}
         return (
             <li className="topic-comment-item">
                 <div className="topic-comment-head">
-                    <Link to={`/user/${comment.author && comment.author.loginname}`} className="topic-comment-avatar">
+                    <Link to={`/user/${comment.author && comment.author.loginname}`} className="topic-comment-avatar mr_15">
                         <img className="avatar" src={comment.author && comment.author.avatar_url} />
                     </Link>
                     <div className="topic-comment-meta">
