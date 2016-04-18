@@ -3,7 +3,7 @@
 import * as React from "react";
 import {Link} from "react-router";
 import {connect} from "react-redux";
-import * as Moment from 'mini-moment';
+import Moment = require('mini-moment');
 
 import Menu from "../components/menu";
 import UserTopic from "../components/user/userTopic";

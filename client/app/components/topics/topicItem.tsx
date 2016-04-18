@@ -2,7 +2,7 @@
 
 import * as React from "react";
 import {Link} from "react-router";
-import * as Moment from 'mini-moment';
+import Moment = require('mini-moment');
 
 import {ITopicItem} from "../../interfaces/topic";
 import {TABS} from "../../constants/constValues";
